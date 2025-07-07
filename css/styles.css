@@ -1,0 +1,80 @@
+* {
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 30px;
+    background-color: gray;
+    overflow: hidden;
+    transition: width 0.3s ease;
+    z-index: 1000;
+  }
+  
+  /* При наведенні — розширюємо меню */
+  .menu:hover {
+    width: 250px;
+  }
+  
+  /* Вертикальний напис "MENU HERE" */
+  .menu-label {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: rotate(90deg) translateY(-100%);
+    transform-origin: left top;
+    color: white;
+    font-size: 22px;
+    white-space: nowrap;
+    transition: opacity 0.3s ease;
+    padding-right: 40px;
+  }
+  
+  /* Ховаємо напис при наведенні */
+  .menu:hover .menu-label {
+    opacity: 0;
+  }
+  
+  /* Блок з меню */
+  .menu-content {
+    opacity: 0;
+    padding: 80px 20px 20px;
+    transition: opacity 0.3s ease 0.1s;
+  }
+  
+  /* Показуємо меню при наведенні */
+  .menu:hover .menu-content {
+    opacity: 1;
+  }
+  
+  .menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .menu-item {
+    margin-bottom: 20px;
+  }
+  
+  .menu-link {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  .menu-item::before {
+    content: "🔸 ";
+    color: orange;
+  }
+  
